@@ -105,6 +105,9 @@ code{font-family:var(--mono);font-size:.86em;color:var(--ink-2)}
 .sec{padding:88px 0;border-bottom:1px solid var(--rule);scroll-margin-top:72px}
 .sec.alt{background:var(--paper-2)}
 .sec-h{margin-bottom:44px}
+.sec-h-sm{margin:64px 0 28px}
+.sec-h-sm h3{font-size:22px;letter-spacing:-.02em;margin-top:12px;max-width:30ch}
+.cmp-traffic{min-width:520px}
 .sec-h h2{font-size:clamp(25px,3.2vw,34px);margin-top:14px;max-width:22ch}
 
 /* ── tables ───────────────────────────────── */

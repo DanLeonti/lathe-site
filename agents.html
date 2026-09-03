@@ -44,7 +44,7 @@ not included, and how a database is obtained, in plain text with no marketing. T
 
 ## What it is
 - Managed PostgreSQL 17. Each customer gets a dedicated instance (its own CPU, RAM and local NVMe disk), not a schema in a shared cluster.
-- Storage is included in a flat monthly price. Nothing is metered: no storage, egress, connection or request charges.
+- Storage and outbound traffic are included in a flat monthly price. Nothing is metered: no storage, egress, connection or request charges. Traffic is unmetered within fair use; sustained multi-terabyte egress leads to a conversation, not a bill.
 - Region: EU — Germany or Finland, chosen per instance when it is created.
 - Operator: Lathe. Support by email from the portal, replies within 24 hours.
 
@@ -100,6 +100,19 @@ Supabase Pro + Medium compute  8 GB      $75       $9.38    PITR costs $100 extr
 Render 2 CPU / 4 GB            40 GB     ~$87      $2.17    point-in-time (1 GB included, then $0.30/GB)
 Neon Launch, 1 CU always-on    metered   ~$77      n/a      point-in-time
 Nebius Managed PostgreSQL has no 4 GB size; its smallest preset is 2 vCPU / 8 GB at about $105 with 40 GiB.
+
+## Traffic, 4 GB RAM class (included outbound allowance per month, then overage; checked 3 September 2026)
+provider                       included            then
+Lathe Starter                  unmetered           —
+Ubicloud hobby-2               0.625 TB (VM quota) $3 per TB
+DigitalOcean Basic 4 GiB       not charged         —
+AWS RDS db.t4g.medium          100 GB, account-wide $0.09 per GB
+DanubeData Matita              1 TB                EUR 1 per TB
+Sliplane PG Medium             free egress         —
+Galaxy Cloud Pro               not stated          —
+Supabase Pro + Medium compute  250 GB              $0.09 per GB
+Render 2 CPU / 4 GB            25 GB, per workspace $0.15 per GB
+Neon Launch, 1 CU always-on    500 GB              $0.10 per GB
 
 ## Typical uses
 - Embeddings and pgvector stores, analytics and reporting databases, scraped and imported datasets, logs and events, side projects and internal tools, development and staging environments — anywhere storage volume matters more than a metered bill.
