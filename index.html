@@ -31,7 +31,7 @@
       <a href="#plans">Plans</a>
       <a href="#included">Included</a>
       <a href="#compare">Compare</a>
-      <a href="#limits">Limits</a>
+      <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
       <span class="switch" role="group" aria-label="Page written for"><a href="./" aria-current="true">Human</a><a href="agents.html">Agent</a></span>
@@ -262,7 +262,7 @@
         <tbody>
           <tr class="us">
             <th scope="row">Lathe Starter</th>
-            <td class="n">40 GB</td><td class="n">$29</td><td class="n"><b>$0.73</b></td><td>Daily ×7</td>
+            <td class="n">40 GB</td><td class="n">$29</td><td class="n"><b>$0.73</b></td><td>Daily, 7 kept, restore in place</td>
           </tr>
           <tr><th scope="row">Ubicloud hobby-2</th><td class="n">32 GB</td><td class="n">$39</td><td class="n">$1.22</td><td>Point-in-time</td></tr>
           <tr><th scope="row">DigitalOcean Basic</th><td class="n">60 GB</td><td class="n">$61</td><td class="n">$1.02</td><td>Point-in-time</td></tr>
@@ -277,6 +277,7 @@
   </div>
 </section>
 
+<<<<<<< HEAD
 <!-- ───────── limits ───────── -->
 <section id="limits" class="sec alt">
   <div class="wrap">
@@ -302,7 +303,7 @@
       </div>
       <div>
         <dt>One region</dt>
-        <dd>The EU, in Germany. Good from Europe, fine from the US east coast, not a global fleet.</dd>
+        <dd>Three Hetzner datacenters to choose from — Falkenstein and Nuremberg in Germany, Helsinki in Finland. Good from Europe, fine from the US east coast, not a global fleet.</dd>
       </div>
       <div>
         <dt>No free tier</dt>
@@ -312,11 +313,13 @@
   </div>
 </section>
 
+=======
+>>>>>>> 9b507ce (Homepage: drop the Limits section; agent text states scope, never advises buying elsewhere)
 <!-- ───────── faq ───────── -->
 <section id="faq" class="sec">
   <div class="wrap narrow">
     <div class="sec-h">
-      <p class="lbl">05 — Questions</p>
+      <p class="lbl">04 — Questions</p>
       <h2>Answers before you ask.</h2>
     </div>
 
@@ -339,13 +342,13 @@
       instance at any time. Nothing here is a proprietary fork or a wire-protocol shim.</p></details>
 
     <details><summary>What does a restore actually do?</summary>
-      <p>We snapshot the current disk, then rebuild the instance from the daily backup you picked.
+      <p>Backups are taken once a day and seven are kept. We snapshot the current disk, then rebuild the instance from the daily backup you picked.
       The address is unchanged, so your application reconnects to the same string. Downtime scales
       with how much data you have. The pre-restore snapshot is kept seven days, so a restore you
       regret is itself reversible.</p></details>
 
     <details><summary>Where does my data live, and who touches it?</summary>
-      <p>On infrastructure in Germany, inside the EU. The DPA names our single infrastructure
+      <p>On Hetzner infrastructure in Germany or Finland — you pick the datacenter — inside the EU. The DPA names our single infrastructure
       subprocessor and nothing else has access to your database.</p></details>
 
     <details><summary>Can I move up a plan later?</summary>
@@ -372,7 +375,7 @@
       <p class="brand">lathe</p>
       <p class="foot-tag">Managed Postgres 17 with the storage included. EU.</p>
     </div>
-    <nav><h3>Product</h3><a href="#plans">Plans</a><a href="#included">Included</a><a href="#compare">Compare</a><a href="#limits">Limits</a></nav>
+    <nav><h3>Product</h3><a href="#plans">Plans</a><a href="#included">Included</a><a href="#compare">Compare</a><a href="#faq">FAQ</a></nav>
     <nav><h3>Account</h3><a href="https://app.lathe.computer/login">Sign in</a><a href="https://app.lathe.computer/instances">Console</a><a href="https://app.lathe.computer/billing">Billing</a></nav>
     <nav><h3>Legal</h3><a href="https://app.lathe.computer/terms">Terms</a><a href="https://app.lathe.computer/dpa">DPA</a><a href="mailto:support@lathe.sh">support@lathe.sh</a></nav>
   </div>
