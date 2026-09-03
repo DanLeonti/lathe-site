@@ -211,6 +211,7 @@ details p{color:var(--ink-2);padding:0 48px 22px 0;font-size:15.5px}
   .foot-in{grid-template-columns:1fr}
   .hero-cta{gap:18px}
   .chart svg{display:none}
+  .chart-traffic{display:none}
   .bars{display:block}
   th,td{padding:12px 10px;font-size:14.5px}
   table{min-width:540px}
