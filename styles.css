@@ -139,8 +139,8 @@ td:last-child,th:last-child{padding-right:0}
 .conn .s{color:#8ab6ee}
 
 /* ── chart ────────────────────────────────── */
-.chart{margin:0 0 48px}
-.chart svg{width:100%;height:auto;display:block;max-width:860px}
+.chart{max-width:860px;margin:0 auto 48px}
+.chart svg{width:100%;height:auto;display:block}
 .chart .grid line{stroke:var(--viz-grid);stroke-width:1}
 .chart .axis line{stroke:var(--viz-axis);stroke-width:1}
 .chart .tick{font:500 11.5px var(--mono);fill:var(--ink-3)}
@@ -159,7 +159,7 @@ td:last-child,th:last-child{padding-right:0}
 .bar.us .bar-n{color:var(--ink);font-weight:550}
 .bar-v{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-2)}
 .bar.us .bar-v{color:var(--ink);font-weight:550}
-.chart figcaption{margin-top:20px;font-size:12.5px;line-height:1.55;color:var(--ink-3);max-width:74ch}
+.chart figcaption{margin:20px auto 0;font-size:12.5px;line-height:1.55;color:var(--ink-3);max-width:74ch;text-align:center}
 
 /* ── faq ──────────────────────────────────── */
 details{border-bottom:1px solid var(--rule)}
