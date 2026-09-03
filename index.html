@@ -57,6 +57,7 @@
         <a class="btn lg" href="https://app.lathe.computer/login">Create a database</a>
         <a class="quiet lg" href="#compare">See the comparison →</a>
       </div>
+      <p class="note hero-note">Start free, no card. Add one within three days to keep it.</p>
     </div>
 
     <div class="hero-fig" aria-labelledby="hero-fig-t">
@@ -111,7 +112,7 @@
       </table>
     </div>
     <p class="note">
-      Billed monthly in USD. No usage meter, no egress charge, no per-connection fee.
+      Every plan starts free: create the instance without a card and add one within three days to keep it. Billed monthly in USD after that. No usage meter, no egress charge, no per-connection fee.
       Plans move up only — more storage means the next size.
     </p>
   </div>
@@ -181,77 +182,32 @@
 
     <figure class="chart">
       <svg viewBox="0 0 760 430" role="img" aria-labelledby="ch-t ch-d" preserveAspectRatio="xMidYMid meet">
-        <title id="ch-t">Monthly price against storage included, 4 GB RAM managed Postgres plans</title>
-        <desc id="ch-d">Lathe Starter costs $29 for 40 GB. DigitalOcean is $61 for 60 GB, DanubeData
-        $55 for 50 GB, Ubicloud $39 for 32 GB, Sliplane $49.50 for 10 GB and Supabase $75 for 8 GB.
-        Lathe is the lowest-priced plan and second-largest in storage.</desc>
-
-        <!-- gridlines -->
-        <g class="grid">
-          <line x1="70" y1="350" x2="720" y2="350"/>
-          <line x1="70" y1="272.5" x2="720" y2="272.5"/>
-          <line x1="70" y1="195" x2="720" y2="195"/>
-          <line x1="70" y1="117.5" x2="720" y2="117.5"/>
-          <line x1="70" y1="40" x2="720" y2="40"/>
-        </g>
-        <!-- axes -->
-        <g class="axis">
-          <line x1="70" y1="40" x2="70" y2="350"/>
-          <line x1="70" y1="350" x2="720" y2="350"/>
-        </g>
-        <!-- y ticks -->
-        <g class="tick" text-anchor="end">
-          <text x="58" y="354">$0</text>
-          <text x="58" y="276.5">$20</text>
-          <text x="58" y="199">$40</text>
-          <text x="58" y="121.5">$60</text>
-          <text x="58" y="44">$80</text>
-        </g>
-        <!-- x ticks -->
-        <g class="tick" text-anchor="middle">
-          <text x="70" y="372">0</text>
-          <text x="255.7" y="372">20</text>
-          <text x="441.4" y="372">40</text>
-          <text x="627.1" y="372">60</text>
-        </g>
-        <text class="axt" x="395" y="398" text-anchor="middle">Storage included (GB) →</text>
-        <text class="axt" x="20" y="195" text-anchor="middle" transform="rotate(-90 20 195)">← Price per month</text>
-
-        <!-- competitors (de-emphasis) -->
-        <g class="pt">
-          <g><circle cx="144.3" cy="59.4" r="6"><title>Supabase Pro + Medium — $75 for 8 GB</title></circle>
-             <text x="158" y="63">Supabase</text></g>
-          <g><circle cx="162.9" cy="158.2" r="6"><title>Sliplane PG Medium — €45 (~$49.50) for 10 GB</title></circle>
-             <text x="177" y="162">Sliplane</text></g>
-          <g><circle cx="367.1" cy="198.9" r="6"><title>Ubicloud hobby-2 — $39 for 32 GB</title></circle>
-             <text x="367.1" y="185" text-anchor="middle">Ubicloud</text></g>
-          <g><circle cx="534.3" cy="136.9" r="6"><title>DanubeData Matita — €50 (~$55) for 50 GB</title></circle>
-             <text x="548" y="141">DanubeData</text></g>
-          <g><circle cx="627.1" cy="113.6" r="6"><title>DigitalOcean Basic — $61 for 60 GB</title></circle>
-             <text x="627.1" y="100" text-anchor="middle">DigitalOcean</text></g>
-        </g>
-
-        <!-- lathe (accent) -->
-        <g class="pt us">
-          <circle cx="441.4" cy="237.6" r="7.5"><title>Lathe Starter — $29 for 40 GB</title></circle>
-          <text x="456" y="242">Lathe Starter — $29 / 40 GB</text>
-        </g>
+      <title id="ch-t">Monthly price against storage included, 4 GB RAM managed Postgres plans</title>
+      <desc id="ch-d">Lathe Starter costs $29 for 40 GB. Ubicloud is $39 for 32 GB, Sliplane $49.50 for 10 GB, AWS RDS about $52 for 40 GB, DanubeData $55 for 50 GB, DigitalOcean $60.90 for 60 GB, Galaxy Cloud $69.50 for 30 GB, Supabase $75 for 8 GB and Render about $87 for 40 GB. Lathe is the lowest-priced plan and second-largest in storage.</desc>
+      <g class="grid"><line x1="70" y1="350.0" x2="720" y2="350.0"/><line x1="70" y1="288.0" x2="720" y2="288.0"/><line x1="70" y1="226.0" x2="720" y2="226.0"/><line x1="70" y1="164.0" x2="720" y2="164.0"/><line x1="70" y1="102.0" x2="720" y2="102.0"/><line x1="70" y1="40.0" x2="720" y2="40.0"/></g>
+      <g class="axis"><line x1="70" y1="40" x2="70" y2="350"/><line x1="70" y1="350" x2="720" y2="350"/></g>
+      <g class="tick" text-anchor="end"><text x="58" y="354.0">$0</text><text x="58" y="292.0">$20</text><text x="58" y="230.0">$40</text><text x="58" y="168.0">$60</text><text x="58" y="106.0">$80</text><text x="58" y="44.0">$100</text></g>
+      <g class="tick" text-anchor="middle"><text x="70.0" y="372">0</text><text x="255.7" y="372">20</text><text x="441.4" y="372">40</text><text x="627.1" y="372">60</text></g>
+      <text class="axt" x="395" y="398" text-anchor="middle">Storage included (GB) →</text>
+      <text class="axt" x="20" y="195" text-anchor="middle" transform="rotate(-90 20 195)">← Price per month</text>
+      <g class="pt"><g><circle cx="367.1" cy="229.1" r="6"><title>Ubicloud hobby-2 — $39 for 32 GB</title></circle><text x="367.1" y="215.2" text-anchor="middle">Ubicloud</text></g><g><circle cx="162.9" cy="196.6" r="6"><title>Sliplane PG Medium — €45 (~$49.50) for 10 GB</title></circle><text x="176.6" y="201.0">Sliplane</text></g><g><circle cx="441.4" cy="188.6" r="6"><title>AWS RDS db.t4g.medium — ~$52 for 40 GB gp3 (us-east-1, single-AZ, on-demand)</title></circle><text x="455.1" y="193.0">AWS RDS</text></g><g><circle cx="534.3" cy="179.5" r="6"><title>DanubeData Matita — €50 (~$55) for 50 GB</title></circle><text x="548.0" y="183.9">DanubeData</text></g><g><circle cx="627.1" cy="161.2" r="6"><title>DigitalOcean Basic 4 GiB — $60.90 for 60 GiB</title></circle><text x="627.1" y="147.3" text-anchor="middle">DigitalOcean</text></g><g><circle cx="348.6" cy="134.6" r="6"><title>Galaxy Cloud Pro — $69.50 for 30 GB</title></circle><text x="348.6" y="120.7" text-anchor="middle">Galaxy Cloud</text></g><g><circle cx="144.3" cy="117.5" r="6"><title>Supabase Pro + Medium — $75 for 8 GB</title></circle><text x="158.0" y="121.9">Supabase</text></g><g><circle cx="441.4" cy="81.2" r="6"><title>Render 2 CPU / 4 GB — $75 + 39 GB at $0.30 ≈ $87 for 40 GB</title></circle><text x="455.1" y="85.6">Render</text></g></g>
+      <g class="pt us"><circle cx="441.4" cy="260.1" r="7.5"><title>Lathe Starter — $29 for 40 GB</title></circle><text x="456.0" y="264.5">Lathe Starter — $29 / 40 GB</text></g>
       </svg>
 
       <!-- phone alternative to the scatter: same data as $/GB, lower is better -->
       <div class="bars" aria-hidden="true">
         <p class="bars-t">Price per GB per month — lower is better</p>
         <div class="bar us" style="--v:7.8%"><span class="bar-n">Lathe</span><span class="bar-track"><i></i></span><span class="bar-v">$0.73</span></div>
-        <div class="bar" style="--v:10.9%"><span class="bar-n">DigitalOcean</span><span class="bar-track"><i></i></span><span class="bar-v">$1.02</span></div>
-        <div class="bar" style="--v:11.7%"><span class="bar-n">DanubeData</span><span class="bar-track"><i></i></span><span class="bar-v">$1.10</span></div>
-        <div class="bar" style="--v:13%"><span class="bar-n">Ubicloud</span><span class="bar-track"><i></i></span><span class="bar-v">$1.22</span></div>
-        <div class="bar" style="--v:52.8%"><span class="bar-n">Sliplane</span><span class="bar-track"><i></i></span><span class="bar-v">$4.95</span></div>
-        <div class="bar" style="--v:100%"><span class="bar-n">Supabase</span><span class="bar-track"><i></i></span><span class="bar-v">$9.38</span></div>
+          <div class="bar" style="--v:10.9%"><span class="bar-n">DigitalOcean</span><span class="bar-track"><i></i></span><span class="bar-v">$1.02</span></div>
+          <div class="bar" style="--v:11.7%"><span class="bar-n">DanubeData</span><span class="bar-track"><i></i></span><span class="bar-v">$1.10</span></div>
+          <div class="bar" style="--v:13.0%"><span class="bar-n">Ubicloud</span><span class="bar-track"><i></i></span><span class="bar-v">$1.22</span></div>
+          <div class="bar" style="--v:13.9%"><span class="bar-n">AWS RDS</span><span class="bar-track"><i></i></span><span class="bar-v">$1.30</span></div>
+          <div class="bar" style="--v:23.1%"><span class="bar-n">Render</span><span class="bar-track"><i></i></span><span class="bar-v">$2.17</span></div>
+          <div class="bar" style="--v:24.7%"><span class="bar-n">Galaxy Cloud</span><span class="bar-track"><i></i></span><span class="bar-v">$2.32</span></div>
+          <div class="bar" style="--v:52.8%"><span class="bar-n">Sliplane</span><span class="bar-track"><i></i></span><span class="bar-v">$4.95</span></div>
+          <div class="bar" style="--v:100.0%"><span class="bar-n">Supabase</span><span class="bar-track"><i></i></span><span class="bar-v">$9.38</span></div>
       </div>
-      <figcaption>
-        Vendor list prices, 2 September 2026. Euro plans converted at 1.10 USD/EUR.
-        Neon Launch is omitted: it bills storage separately, so it has no fixed gigabyte figure to plot.
-      </figcaption>
+      <figcaption>Vendor list prices, checked 2–3 September 2026. Euro plans at 1.10 USD/EUR. AWS is us-east-1, single-AZ, on-demand. Render includes 1 GB and meters the rest at $0.30/GB, shown here at 40 GB. Neon Launch is omitted: it bills storage separately, so it has no fixed gigabyte figure to plot.</figcaption>
     </figure>
 
     <div class="tablewrap">
@@ -266,9 +222,12 @@
           </tr>
           <tr><th scope="row">Ubicloud hobby-2</th><td class="n">32 GB</td><td class="n">$39</td><td class="n">$1.22</td><td>Point-in-time</td></tr>
           <tr><th scope="row">DigitalOcean Basic</th><td class="n">60 GB</td><td class="n">$61</td><td class="n">$1.02</td><td>Point-in-time</td></tr>
+          <tr><th scope="row">AWS RDS db.t4g.medium</th><td class="n">40 GB</td><td class="n">~$52</td><td class="n">$1.30</td><td>Point-in-time</td></tr>
           <tr><th scope="row">DanubeData Matita</th><td class="n">50 GB</td><td class="n">€50</td><td class="n">$1.10</td><td>Daily</td></tr>
           <tr><th scope="row">Sliplane PG Medium</th><td class="n">10 GB</td><td class="n">€45</td><td class="n">$4.95</td><td>Point-in-time</td></tr>
+          <tr><th scope="row">Galaxy Cloud Pro</th><td class="n">30 GB</td><td class="n">$69.50</td><td class="n">$2.32</td><td>Not stated</td></tr>
           <tr><th scope="row">Supabase Pro + Medium</th><td class="n">8 GB</td><td class="n">$75</td><td class="n">$9.38</td><td>PITR +$100</td></tr>
+          <tr><th scope="row">Render 2 CPU / 4 GB</th><td class="n">40 GB</td><td class="n">~$87</td><td class="n">$2.17</td><td>Point-in-time</td></tr>
           <tr><th scope="row">Neon Launch, 1 CU</th><td class="n">metered</td><td class="n">~$77</td><td class="n">—</td><td>Point-in-time</td></tr>
         </tbody>
       </table>
@@ -285,6 +244,8 @@
       <h2>Answers before you ask.</h2>
     </div>
 
+    <details><summary>Is there a free tier?</summary>
+      <p>Yes. Create an instance without a card — a person or an agent — and use it for three days. Add a card within those three days to keep it; otherwise it is reclaimed and its data deleted.</p></details>
     <details><summary>How long until I have a connection string?</summary>
       <p>About ninety seconds. Instances come from pre-built images with Postgres and the pooler
       already installed, so creating one is a boot and a credential injection rather than an install.</p></details>
@@ -324,7 +285,7 @@
 <section class="cta">
   <div class="wrap">
     <h2>40 GB, backed up daily, for $29 a month.</h2>
-    <p>Running in about ninety seconds. Cancel from the console whenever you like.</p>
+    <p>Running in about ninety seconds. Free for three days, no card to start.</p>
     <a class="btn lg invert" href="https://app.lathe.computer/login">Create a database</a>
   </div>
 </section>

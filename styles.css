@@ -86,6 +86,7 @@ code{font-family:var(--mono);font-size:.86em;color:var(--ink-2)}
 .hero-in{display:grid;grid-template-columns:1.35fr 1fr;gap:72px;align-items:start}
 .hero h1{font-size:clamp(38px,5.4vw,60px);letter-spacing:-.038em;font-weight:560}
 .lede{margin-top:26px;color:var(--ink-2);font-size:18px;max-width:52ch}
+.hero-note{margin-top:16px;font-size:14px}
 .hero-cta{display:flex;align-items:center;gap:26px;margin-top:38px;flex-wrap:wrap}
 
 .hero-fig{border:1px solid var(--rule);border-radius:4px;padding:26px 26px 22px;background:#fff}

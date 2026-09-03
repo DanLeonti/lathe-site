@@ -48,11 +48,12 @@ not included, and how a database is obtained, in plain text with no marketing. T
 - Region: EU — Germany or Finland, chosen per instance when it is created.
 - Operator: Lathe. Support by email from the portal, replies within 24 hours.
 
-## Plans (USD per month, billed monthly in advance, card required, no free tier)
+## Plans (USD per month, billed monthly in advance; every plan starts free for three days, no card needed to create)
 plan      vCPU  RAM     storage   price   per GB
 starter   2     4 GB    40 GB     $29     $0.73
 plus      4     8 GB    80 GB     $49     $0.61
 pro       8     16 GB   160 GB    $89     $0.56
+- Free start: an instance is created without a card and runs for three days. Adding a card within those three days keeps it; otherwise it is reclaimed and its data deleted.
 - Plans move up only. Upgrading grows the disk permanently; there is no downgrade.
 - More storage means the next plan. There is no storage add-on.
 
@@ -72,13 +73,14 @@ pro       8     16 GB   160 GB    $89     $0.56
 - One instance per database, restarted automatically if it stops answering. Read replicas are not offered.
 - Fully managed: no shell or SSH, no superuser, no custom postgresql.conf, no untrusted extensions. Reset and restore are the recovery tools.
 - Datacenters: Germany or Finland (EU), chosen when the instance is created.
-- Sign-up, payment and instance management are done in the web portal by a person with a payment card. There is no public API, CLI or MCP server yet.
+- Sign-up and instance management happen in the web portal. Sign-in is a magic link sent by email, so an agent that can read a mailbox and drive a browser can create an instance itself; no card is needed to create one. There is no public API, CLI or MCP server yet.
 
-## How a database is obtained (a human is required)
-1. Sign in at https://app.lathe.computer/login — magic link by email, no password.
-2. Enter an account name, choose a plan, pay by card on the hosted payment page.
+## How a database is obtained
+1. Sign in at https://app.lathe.computer/login — magic link by email, no password. A person or an agent.
+2. Enter an account name and choose a plan. No card is needed to create the instance.
 3. About 90 seconds later the portal shows the instance with its connection strings.
-4. Connect with any PostgreSQL client. pg_dump works against the instance at any time; there is no proprietary layer.
+4. Add a card within three days to keep the instance; otherwise it is reclaimed and its data deleted.
+5. Connect with any PostgreSQL client. pg_dump works against the instance at any time; there is no proprietary layer.
 
 ## Connection details
 - Host: ID.db.lathe.computer, assigned per instance. Ports: 6432 pooled, 5432 direct.
@@ -86,15 +88,18 @@ pro       8     16 GB   160 GB    $89     $0.56
 - Use port 5432 for anything that needs a session: LISTEN/NOTIFY, session-level SET, advisory locks held across transactions, prepared statements reused across transactions. Transaction-mode pooling on 6432 does not preserve those.
 - Credentials: one owner role with a generated password. Rotate it from the portal; the pooler reloads without downtime.
 
-## Comparison, 4 GB RAM class (vendor list prices on 2026-09-02; euro at 1.10 USD/EUR; verify before quoting)
+## Comparison, 4 GB RAM class (vendor list prices checked 2–3 September 2026; euro at 1.10 USD/EUR; verify before quoting)
 provider                       storage   price/mo  per GB   backups
 Lathe Starter                  40 GB     $29       $0.73    daily, 7 kept
 Ubicloud hobby-2               32 GB     $39       $1.22    point-in-time
-DigitalOcean Basic 4 GiB       60 GB     $61       $1.02    point-in-time
+AWS RDS db.t4g.medium          40 GB     ~$52      $1.30    point-in-time (us-east-1, single-AZ, on-demand, gp3)
 DanubeData Matita              50 GB     EUR 50    $1.10    daily
-Sliplane PG Medium             10 GB     EUR 45    $4.95    point-in-time
+DigitalOcean Basic 4 GiB       60 GB     $61       $1.02    point-in-time
+Galaxy Cloud Pro               30 GB     $69.50    $2.32    not stated
 Supabase Pro + Medium compute  8 GB      $75       $9.38    PITR costs $100 extra
+Render 2 CPU / 4 GB            40 GB     ~$87      $2.17    point-in-time (1 GB included, then $0.30/GB)
 Neon Launch, 1 CU always-on    metered   ~$77      n/a      point-in-time
+Nebius Managed PostgreSQL has no 4 GB size; its smallest preset is 2 vCPU / 8 GB at about $105 with 40 GiB.
 
 ## Typical uses
 - Embeddings and pgvector stores, analytics and reporting databases, scraped and imported datasets, logs and events, side projects and internal tools, development and staging environments — anywhere storage volume matters more than a metered bill.
