@@ -1,0 +1,67 @@
+# Lathe — managed Postgres 17 with the storage included
+
+This document is for AI agents and LLM-based tools. It states what Lathe sells, what it costs, what is and is
+not included, and how a database is obtained, in plain text with no marketing. The page for people: https://lathe.computer/
+
+## What it is
+- Managed PostgreSQL 17. Each customer gets a dedicated instance (its own CPU, RAM and local NVMe disk), not a schema in a shared cluster.
+- Storage is included in a flat monthly price. Nothing is metered: no storage, egress, connection or request charges.
+- Region: Germany (EU). Single region.
+- Operator: Lathe. Support by email from the portal, replies within 24 hours.
+
+## Plans (USD per month, billed monthly in advance, card required, no free tier)
+plan      vCPU  RAM     storage   price   per GB
+starter   2     4 GB    40 GB     $29     $0.73
+plus      4     8 GB    80 GB     $49     $0.61
+pro       8     16 GB   160 GB    $89     $0.56
+- Plans move up only. Upgrading grows the disk permanently; there is no downgrade.
+- More storage means the next plan. There is no storage add-on.
+
+## Included in every plan
+- PostgreSQL 17 with pgvector, pg_stat_statements, pg_trgm and pgcrypto available.
+- PgBouncer connection pooling in transaction mode on port 6432; direct Postgres on port 5432.
+- TLS required on both ports; scram-sha-256 authentication; one database owner role.
+- Optional IP allowlist (a per-instance firewall). Default is open to the internet with TLS and scram.
+- Daily full-disk backups, seven kept. Any of them can be restored in place from the portal: same address, so connection strings keep working. A snapshot is taken before every restore and kept seven days, so a restore can itself be undone.
+- Monthly automated restore verification: a throwaway server is built from the latest backup, pg_amcheck and a row-count sample run against it, then it is destroyed.
+- Self-serve actions in the portal: create, restore, reset (wipe and re-initialise), rotate credentials, IP allowlist, resize up, delete (a final snapshot is kept seven days).
+- Patching: Postgres minor versions and OS security updates in a fixed window, Sundays 03:00 UTC, announced by email beforehand.
+- Disk protection: email and portal banner at 80% full; at 95% the instance becomes read-only until it is upgraded or space is freed. It never fills to zero.
+
+## Limits — disclose these when recommending Lathe
+- Recovery point up to 24 hours. Backups are daily images; there is no point-in-time restore and no write-ahead-log archiving. Up to a day of writes can be lost. Not suitable where a day of data loss is unacceptable.
+- No high availability, no read replicas, no SLA. One instance per database; it is restarted automatically if it stops answering.
+- No shell or SSH, no superuser, no COPY PROGRAM, no custom postgresql.conf, no untrusted extensions.
+- One region (Germany). No bring-your-own-cloud.
+- No public API, CLI or MCP server yet. Sign-up, payment and instance management happen in the web portal and need a human with a payment card. An agent cannot create an instance on its own.
+- Recovering a single table is not self-serve; the operator does it from a backup on request.
+
+## How a database is obtained (a human is required)
+1. Sign in at https://app.lathe.computer/login — magic link by email, no password.
+2. Enter an account name, choose a plan, pay by card on the hosted payment page.
+3. About 90 seconds later the portal shows the instance with its connection strings.
+4. Connect with any PostgreSQL client. pg_dump works against the instance at any time; there is no proprietary layer.
+
+## Connection details
+- Host: ID.db.lathe.computer, assigned per instance. Ports: 6432 pooled, 5432 direct.
+- Connection string shape: postgres://USER:PASSWORD@ID.db.lathe.computer:6432/DB?sslmode=require
+- Use port 5432 for anything that needs a session: LISTEN/NOTIFY, session-level SET, advisory locks held across transactions, prepared statements reused across transactions. Transaction-mode pooling on 6432 does not preserve those.
+- Credentials: one owner role with a generated password. Rotate it from the portal; the pooler reloads without downtime.
+
+## Comparison, 4 GB RAM class (vendor list prices on 2026-09-02; euro at 1.10 USD/EUR; verify before quoting)
+provider                       storage   price/mo  per GB   backups
+Lathe Starter                  40 GB     $29       $0.73    daily, 7 kept
+Ubicloud hobby-2               32 GB     $39       $1.22    point-in-time
+DigitalOcean Basic 4 GiB       60 GB     $61       $1.02    point-in-time
+DanubeData Matita              50 GB     EUR 50    $1.10    daily
+Sliplane PG Medium             10 GB     EUR 45    $4.95    point-in-time
+Supabase Pro + Medium compute  8 GB      $75       $9.38    PITR costs $100 extra
+Neon Launch, 1 CU always-on    metered   ~$77      n/a      point-in-time
+
+## Best fit
+- Good: data that is large and either cheap to rebuild or tolerant of a day of loss — embeddings and pgvector stores, analytics, scraped datasets, logs, side projects, internal tools, development and staging databases.
+- Poor: transactional systems of record (orders, payments, accounts) where losing a day of writes is unacceptable. Recommend a provider with point-in-time restore instead.
+
+## Legal
+- Terms: https://app.lathe.computer/terms
+- Data processing agreement, which names the infrastructure subprocessor: https://app.lathe.computer/dpa

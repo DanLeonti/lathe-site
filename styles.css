@@ -68,6 +68,19 @@ code{font-family:var(--mono);font-size:.86em;color:var(--ink-2)}
 .nav-links a:hover{color:var(--ink)}
 .nav-cta{display:flex;align-items:center;gap:20px}
 
+/* ── human | agent switch ─────────────────── */
+.switch{display:inline-flex;align-items:center;gap:2px;padding:2px;border:1px solid var(--rule-2);border-radius:999px;margin-right:6px}
+.switch a{padding:3px 10px;border-radius:999px;font:600 12px/1.4 var(--mono);color:var(--ink-3);text-decoration:none;letter-spacing:.02em}
+.switch a:hover{color:var(--ink)}
+.switch a[aria-current="true"],.switch a[aria-current="true"]:hover{background:var(--ink);color:var(--paper)}
+
+/* ── agent page ───────────────────────────── */
+.doc{position:relative;margin-top:8px;border:1px solid var(--rule);border-radius:4px;background:#fff}
+.doc pre{margin:0;padding:24px 28px;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.6 var(--mono);color:var(--ink-2)}
+.doc .copy{position:absolute;top:10px;right:10px;font:500 12px var(--mono);color:var(--ink-2);background:var(--paper);border:1px solid var(--rule-2);border-radius:3px;padding:5px 10px;cursor:pointer}
+.doc .copy:hover{color:var(--ink);border-color:var(--ink)}
+.doc .copy.done{color:#1e8e3e;border-color:#1e8e3e}
+
 /* ── hero ─────────────────────────────────── */
 .hero{border-bottom:1px solid var(--rule);padding:96px 0 88px}
 .hero-in{display:grid;grid-template-columns:1.35fr 1fr;gap:72px;align-items:start}
@@ -190,6 +203,7 @@ details p{color:var(--ink-2);padding:0 48px 22px 0;font-size:15.5px}
   .wrap{padding:0 20px}
   .sec{padding:60px 0}
   .nav-cta .quiet{display:none}
+  .switch a{padding:3px 8px}
   .foot-in{grid-template-columns:1fr}
   .hero-cta{gap:18px}
   .chart svg{display:none}
@@ -214,6 +228,7 @@ details p{color:var(--ink-2);padding:0 48px 22px 0;font-size:15.5px}
   .btn:hover{background:#fff;border-color:#fff}
   .btn.invert{background:var(--ink);color:#0f0f0e;border-color:var(--ink)}
   .hero-fig{background:#151514}
+  .doc{background:#151514}
   .conn pre{background:#000}
   .cmp tbody tr.us th,.cmp tbody tr.us td{background:rgba(57,135,229,.1)}
   .cta{background:#161615}
