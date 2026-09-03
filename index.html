@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lathe — 40 GB of managed Postgres for $29</title>
+<meta name="description" content="Managed Postgres 17 with the storage included. 40 GB on NVMe for $29/month, up to 160 GB for $89. Daily backups, pooling and TLS in the price.">
+<meta name="theme-color" content="#fbfaf8">
+<meta property="og:title" content="Lathe — 40 GB of managed Postgres for $29">
+<meta property="og:description" content="Storage is the thing everyone else meters. We include it. From $0.73 per GB per month.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230b0b0b'/><path d='M8 7v18M8 25h16' stroke='%23fbfaf8' stroke-width='3'/></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/">lathe</a>
+    <nav class="nav-links">
+      <a href="#plans">Plans</a>
+      <a href="#included">Included</a>
+      <a href="#compare">Compare</a>
+      <a href="#limits">Limits</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="quiet" href="/login">Sign in</a>
+      <a class="btn" href="/login">Create a database</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ───────── hero ───────── -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <h1>40&nbsp;GB of managed Postgres.<br><em>$29 a month.</em></h1>
+      <p class="lede">
+        Storage is the line item everyone else meters. We include it — on NVMe,
+        with daily backups, connection pooling and TLS in the same flat price.
+        Nothing on your bill moves when your tables grow.
+      </p>
+      <div class="hero-cta">
+        <a class="btn lg" href="/login">Create a database</a>
+        <a class="quiet lg" href="#compare">See the comparison →</a>
+      </div>
+    </div>
+
+    <div class="hero-fig" aria-labelledby="hero-fig-t">
+      <p class="fig-t" id="hero-fig-t">Cost per gigabyte, per month</p>
+      <p class="hero-num">$0.73<span>/GB on Starter</span></p>
+      <dl class="hero-dl">
+        <div><dt>Starter</dt><dd>40 GB</dd><dd class="n">$0.73</dd></div>
+        <div><dt>Plus</dt><dd>80 GB</dd><dd class="n">$0.61</dd></div>
+        <div><dt>Pro</dt><dd>160 GB</dd><dd class="n">$0.56</dd></div>
+      </dl>
+      <p class="fig-f">Plan price divided by storage included. The bigger the plan, the less each gigabyte costs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── plans ───────── -->
+<section id="plans" class="sec">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="lbl">01 — Plans</p>
+      <h2>Three sizes. Every feature in all of them.</h2>
+    </div>
+
+    <div class="tablewrap">
+      <table class="plans">
+        <thead>
+          <tr>
+            <th>Plan</th><th class="n">vCPU</th><th class="n">RAM</th>
+            <th class="n">Storage</th><th class="n">Per GB</th><th class="n">Price</th><th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Starter</th>
+            <td class="n">2</td><td class="n">4 GB</td><td class="n">40 GB</td>
+            <td class="n dim">$0.73</td><td class="n price">$29</td>
+            <td class="act"><a href="/login">Choose →</a></td>
+          </tr>
+          <tr>
+            <th scope="row">Plus</th>
+            <td class="n">4</td><td class="n">8 GB</td><td class="n">80 GB</td>
+            <td class="n dim">$0.61</td><td class="n price">$49</td>
+            <td class="act"><a href="/login">Choose →</a></td>
+          </tr>
+          <tr>
+            <th scope="row">Pro</th>
+            <td class="n">8</td><td class="n">16 GB</td><td class="n">160 GB</td>
+            <td class="n dim">$0.56</td><td class="n price">$89</td>
+            <td class="act"><a href="/login">Choose →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">
+      Billed monthly in USD. No usage meter, no egress charge, no per-connection fee.
+      Plans move up only — more storage means the next size.
+    </p>
+  </div>
+</section>
+
+<!-- ───────── included ───────── -->
+<section id="included" class="sec alt">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="lbl">02 — Included</p>
+      <h2>In the price, not in an add-on tier.</h2>
+    </div>
+
+    <dl class="spec">
+      <div>
+        <dt>Storage on NVMe</dt>
+        <dd>Your data sits on local NVMe rather than a network volume, so every write commits
+        against a disk that is physically yours. It is sized with the plan and never metered.</dd>
+      </div>
+      <div>
+        <dt>Daily backups, kept seven days</dt>
+        <dd>Restore any of the last seven in place — the address does not change, so your
+        connection string keeps working. We snapshot the current disk before a restore runs,
+        which makes the restore itself reversible for seven days.</dd>
+      </div>
+      <div>
+        <dt>Connection pooling and TLS</dt>
+        <dd>PgBouncer in transaction mode on <code>6432</code>, direct Postgres on <code>5432</code>,
+        TLS with scram-sha-256 on both. An IP allowlist is available when open-with-TLS is not enough.</dd>
+      </div>
+      <div>
+        <dt>A dedicated instance</dt>
+        <dd>Your database is not a schema inside somebody else's cluster. Nothing else is
+        scheduled against your CPU or your disk.</dd>
+      </div>
+      <div>
+        <dt>Postgres 17 and the usual extensions</dt>
+        <dd><code>pgvector</code>, <code>pg_stat_statements</code>, <code>pg_trgm</code> and
+        <code>pgcrypto</code> are ready on first boot. Minor versions and security updates land in a
+        fixed window, Sundays 03:00 UTC, announced beforehand.</dd>
+      </div>
+      <div>
+        <dt>Self-serve operations</dt>
+        <dd>Create, restore, reset, rotate credentials, set an allowlist, resize up, delete.
+        Seven buttons in the console, none of which is an email to us.</dd>
+      </div>
+    </dl>
+
+    <div class="conn">
+      <p class="lbl">Connect</p>
+      <pre><code>psql <span class="s">"postgres://app:••••@db-7f3a.lathe.sh:6432/app?sslmode=require"</span></code></pre>
+      <p class="note">Real credentials, standard protocol. <code>pg_dump</code> against your own
+      instance works whenever you want it to — there is no proprietary layer in between.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── compare ───────── -->
+<section id="compare" class="sec">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="lbl">03 — Compare</p>
+      <h2>Cheaper, with more room, in the 4&nbsp;GB class.</h2>
+      <p class="sub">Every point below is a managed Postgres plan with 4 GB of RAM. Down is cheaper;
+      right is more storage. Lathe is the only one in the bottom-right.</p>
+    </div>
+
+    <figure class="chart">
+      <svg viewBox="0 0 760 430" role="img" aria-labelledby="ch-t ch-d" preserveAspectRatio="xMidYMid meet">
+        <title id="ch-t">Monthly price against storage included, 4 GB RAM managed Postgres plans</title>
+        <desc id="ch-d">Lathe Starter costs $29 for 40 GB. DigitalOcean is $61 for 60 GB, DanubeData
+        $55 for 50 GB, Ubicloud $39 for 32 GB, Sliplane $49.50 for 10 GB and Supabase $75 for 8 GB.
+        Lathe is the lowest-priced plan and second-largest in storage.</desc>
+
+        <!-- gridlines -->
+        <g class="grid">
+          <line x1="70" y1="350" x2="720" y2="350"/>
+          <line x1="70" y1="272.5" x2="720" y2="272.5"/>
+          <line x1="70" y1="195" x2="720" y2="195"/>
+          <line x1="70" y1="117.5" x2="720" y2="117.5"/>
+          <line x1="70" y1="40" x2="720" y2="40"/>
+        </g>
+        <!-- axes -->
+        <g class="axis">
+          <line x1="70" y1="40" x2="70" y2="350"/>
+          <line x1="70" y1="350" x2="720" y2="350"/>
+        </g>
+        <!-- y ticks -->
+        <g class="tick" text-anchor="end">
+          <text x="58" y="354">$0</text>
+          <text x="58" y="276.5">$20</text>
+          <text x="58" y="199">$40</text>
+          <text x="58" y="121.5">$60</text>
+          <text x="58" y="44">$80</text>
+        </g>
+        <!-- x ticks -->
+        <g class="tick" text-anchor="middle">
+          <text x="70" y="372">0</text>
+          <text x="255.7" y="372">20</text>
+          <text x="441.4" y="372">40</text>
+          <text x="627.1" y="372">60</text>
+        </g>
+        <text class="axt" x="395" y="398" text-anchor="middle">Storage included (GB) →</text>
+        <text class="axt" x="20" y="195" text-anchor="middle" transform="rotate(-90 20 195)">← Price per month</text>
+
+        <!-- competitors (de-emphasis) -->
+        <g class="pt">
+          <g><circle cx="144.3" cy="59.4" r="6"><title>Supabase Pro + Medium — $75 for 8 GB</title></circle>
+             <text x="158" y="63">Supabase</text></g>
+          <g><circle cx="162.9" cy="158.2" r="6"><title>Sliplane PG Medium — €45 (~$49.50) for 10 GB</title></circle>
+             <text x="177" y="162">Sliplane</text></g>
+          <g><circle cx="367.1" cy="198.9" r="6"><title>Ubicloud hobby-2 — $39 for 32 GB</title></circle>
+             <text x="367.1" y="185" text-anchor="middle">Ubicloud</text></g>
+          <g><circle cx="534.3" cy="136.9" r="6"><title>DanubeData Matita — €50 (~$55) for 50 GB</title></circle>
+             <text x="548" y="141">DanubeData</text></g>
+          <g><circle cx="627.1" cy="113.6" r="6"><title>DigitalOcean Basic — $61 for 60 GB</title></circle>
+             <text x="627.1" y="100" text-anchor="middle">DigitalOcean</text></g>
+        </g>
+
+        <!-- lathe (accent) -->
+        <g class="pt us">
+          <circle cx="441.4" cy="237.6" r="7.5"><title>Lathe Starter — $29 for 40 GB</title></circle>
+          <text x="456" y="242">Lathe Starter — $29 / 40 GB</text>
+        </g>
+      </svg>
+      <figcaption>
+        Vendor list prices, 2 September 2026. Euro plans converted at 1.10 USD/EUR.
+        Neon Launch is omitted: it bills storage separately, so it has no fixed gigabyte figure to plot.
+      </figcaption>
+    </figure>
+
+    <div class="tablewrap">
+      <table class="cmp">
+        <thead>
+          <tr><th>Plan (4 GB RAM)</th><th class="n">Storage</th><th class="n">Price</th><th class="n">Per GB</th><th>Backups</th></tr>
+        </thead>
+        <tbody>
+          <tr class="us">
+            <th scope="row">Lathe Starter</th>
+            <td class="n">40 GB</td><td class="n">$29</td><td class="n"><b>$0.73</b></td><td>Daily ×7</td>
+          </tr>
+          <tr><th scope="row">Ubicloud hobby-2</th><td class="n">32 GB</td><td class="n">$39</td><td class="n">$1.22</td><td>Point-in-time</td></tr>
+          <tr><th scope="row">DigitalOcean Basic</th><td class="n">60 GB</td><td class="n">$61</td><td class="n">$1.02</td><td>Point-in-time</td></tr>
+          <tr><th scope="row">DanubeData Matita</th><td class="n">50 GB</td><td class="n">€50</td><td class="n">$1.10</td><td>Daily</td></tr>
+          <tr><th scope="row">Sliplane PG Medium</th><td class="n">10 GB</td><td class="n">€45</td><td class="n">$4.95</td><td>Point-in-time</td></tr>
+          <tr><th scope="row">Supabase Pro + Medium</th><td class="n">8 GB</td><td class="n">$75</td><td class="n">$9.38</td><td>PITR +$100</td></tr>
+          <tr><th scope="row">Neon Launch, 1 CU</th><td class="n">metered</td><td class="n">~$77</td><td class="n">—</td><td>Point-in-time</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Prices move. Check them yourself before you take our word for it.</p>
+  </div>
+</section>
+
+<!-- ───────── limits ───────── -->
+<section id="limits" class="sec alt">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="lbl">04 — Limits</p>
+      <h2>What you give up at this price.</h2>
+      <p class="sub">Four rows above include point-in-time restore and we do not. Here is the
+      whole list, before you sign up rather than after.</p>
+    </div>
+
+    <dl class="spec two">
+      <div>
+        <dt>Recovery point up to 24 hours</dt>
+        <dd>Backups are daily images, not a continuous write log. A bad day can cost you a day of
+        writes. If that would end your business, buy point-in-time restore from someone on the list
+        above — we will tell you the same thing on a call.</dd>
+      </div>
+      <div>
+        <dt>No shell, no superuser</dt>
+        <dd>No SSH, no <code>COPY PROGRAM</code>, no custom <code>postgresql.conf</code>, no
+        untrusted extensions. That restriction is what keeps the operations automated and the
+        price where it is.</dd>
+      </div>
+      <div>
+        <dt>One region</dt>
+        <dd>The EU, in Germany. Good from Europe, fine from the US east coast, not a global fleet.</dd>
+      </div>
+      <div>
+        <dt>No free tier</dt>
+        <dd>Card on from the first minute. There is no trial that turns into a bill you forgot about.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ───────── faq ───────── -->
+<section id="faq" class="sec">
+  <div class="wrap narrow">
+    <div class="sec-h">
+      <p class="lbl">05 — Questions</p>
+      <h2>Answers before you ask.</h2>
+    </div>
+
+    <details><summary>How long until I have a connection string?</summary>
+      <p>About ninety seconds. Instances come from pre-built images with Postgres and the pooler
+      already installed, so creating one is a boot and a credential injection rather than an install.</p></details>
+
+    <details><summary>What happens when my disk fills up?</summary>
+      <p>At 80% you get an email and a banner in the console with a one-click upgrade. At 95% the
+      instance goes read-only until you upgrade or free space. It will not quietly fill to zero
+      and corrupt itself at four in the morning.</p></details>
+
+    <details><summary>Do you check that the backups actually restore?</summary>
+      <p>Monthly, per instance, automatically. We build a throwaway server from the latest backup,
+      run <code>pg_amcheck</code> and a row-count sample against it, then destroy it. A failure
+      pages us, not you.</p></details>
+
+    <details><summary>Can I get my data out?</summary>
+      <p>Yes. You hold real Postgres credentials, so <code>pg_dump</code> works against your
+      instance at any time. Nothing here is a proprietary fork or a wire-protocol shim.</p></details>
+
+    <details><summary>What does a restore actually do?</summary>
+      <p>We snapshot the current disk, then rebuild the instance from the daily backup you picked.
+      The address is unchanged, so your application reconnects to the same string. Downtime scales
+      with how much data you have. The pre-restore snapshot is kept seven days, so a restore you
+      regret is itself reversible.</p></details>
+
+    <details><summary>Where does my data live, and who touches it?</summary>
+      <p>On infrastructure in Germany, inside the EU. The DPA names our single infrastructure
+      subprocessor and nothing else has access to your database.</p></details>
+
+    <details><summary>Can I move up a plan later?</summary>
+      <p>Yes, at any time, and the storage grows with it. Plans go up only — pick the moment,
+      because it costs a few minutes of downtime.</p></details>
+
+  </div>
+</section>
+
+<!-- ───────── cta ───────── -->
+<section class="cta">
+  <div class="wrap">
+    <h2>40 GB, backed up daily, for $29 a month.</h2>
+    <p>Running in about ninety seconds. Cancel from the console whenever you like.</p>
+    <a class="btn lg invert" href="/login">Create a database</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <p class="brand">lathe</p>
+      <p class="foot-tag">Managed Postgres 17 with the storage included. EU.</p>
+    </div>
+    <nav><h3>Product</h3><a href="#plans">Plans</a><a href="#included">Included</a><a href="#compare">Compare</a><a href="#limits">Limits</a></nav>
+    <nav><h3>Account</h3><a href="/login">Sign in</a><a href="/console">Console</a><a href="/console/billing">Billing</a></nav>
+    <nav><h3>Legal</h3><a href="/terms">Terms</a><a href="/dpa">DPA</a><a href="mailto:support@lathe.sh">support@lathe.sh</a></nav>
+  </div>
+  <div class="wrap foot-b">
+    <span>© 2026 Lathe</span>
+    <span>Prices in USD. Comparison figures verified 2026-09-02.</span>
+  </div>
+</footer>
+
+</body>
+</html>
